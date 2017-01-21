@@ -1,0 +1,18 @@
+{
+  "name": "Retrieve information",
+  "version": "1.0.0",
+  "description": "Retrieve information about the data using free text",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "JSON",
+    "AutoComplete"
+  ],
+  "author": "Lior Zamir"
+}

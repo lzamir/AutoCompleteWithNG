@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+    <title>Free Text</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/styles/main.css" rel="stylesheet" />
+    <link href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css" rel="stylesheet" />
+    <link href="https://material.angularjs.org/1.1.1/docs.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header id="mainHeader">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <h1 class="navbar-header">
+                <a href="#/">Retrieve information about the data using free text</a>
+            </h1>
+        </nav>
+    </header>
+
+    <div id="page-wrapper">
+
+        <div ng-controller="DefaultCtrl as ctrl" layout="column" ng-cloak>
+            <md-content class="md-padding">
+            <form ng-submit="$event.preventDefault()" name="searchForm">
+     
+             <div layout-gt-sm="row">
+       
+                <md-autocomplete flex required
+                    md-input-name="autocompleteField"
+                    md-no-cache="ctrl.noCache"
+                    md-selected-item="ctrl.selectedItem"
+                    md-search-text="ctrl.searchText"
+                    md-items="item in ctrl.querySearch(ctrl.searchText)"
+                    md-item-text="item.joke"
+                    md-floating-label="Favorite joke">
+                  <md-item-template>
+                    <span md-highlight-text="ctrl.searchText">{{item.joke}}</span>
+                  </md-item-template>
+                </md-autocomplete>
+                </div>
+            </form>
+             </md-content>
+        </div>
+
+    </div>
+
+    <footer id="footer" class="panel-footer footer navbar-fixed-bottom">
+        <div class="row">
+            <div>
+                Created by <a href="https://linkedin.com/in/lzamir" target="_blank"><strong>Lior Zamir</strong></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor Libs -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/jquery-3.1.1.min.js"></script><!--jQuery only used for Bootstrap functionality-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>    
+
+    <!-- UI Libs -->
+    <script src="scripts/bootstrap.js"></script>
+
+    <!-- App Libs -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/appController.js"></script>    
+
+</body>
+</html>
